@@ -16,14 +16,21 @@
 //= require jquery-star-rating
 //= require_tree .
 
-$(document).ready(function(){
-  $('#search').keyup(function(event){
+
+var ready;
+ready = function() {
+
+	 $('#search').keyup(function(event){
     $('#toolSearch').submit();
   });
 
   $(".resources").click(function() {
     $(this).parent().siblings("div.hidden-resources").toggle("fast");
   });
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
 
 
